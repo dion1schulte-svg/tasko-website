@@ -1,0 +1,4 @@
+<!-- TODO: Platzhalter – Wortmarke als SVG aus der Originaldatei (tasko-logo-dark.png) exportieren und diese Datei ersetzen. Nicht als Text nachbauen. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112 36" role="img" aria-label="tasko">
+  <text x="0" y="28" font-family="Helvetica Neue, Arial, sans-serif" font-size="32" font-weight="700" letter-spacing="-1" fill="#F5F4EF">task<tspan fill="#F6C644">o</tspan></text>
+</svg>

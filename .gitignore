@@ -1,0 +1,9 @@
+# Originalfotos (können Metadaten wie GPS enthalten) – nur die erzeugten Varianten gehören ins Repo
+scripts/_originals/
+
+# Lokaler Build-Ordner des Pages-Workflows
+_site/
+
+# System / Tools
+.DS_Store
+node_modules/

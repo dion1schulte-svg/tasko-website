@@ -1,0 +1,5 @@
+<!-- TODO: Nachbau aus tasko-logo-light.png (Farbe #F6C644 gemessen) – mit dem Original-Badge-SVG abgleichen bzw. ersetzen -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="tasko">
+  <rect width="64" height="64" rx="16.5" fill="#F6C644"/>
+  <path d="M34.4 21.6 21.9 33.1 30.6 35.5 29.4 42.9 42.1 31 33.5 28.7Z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.6" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,59 @@
+# tasko – Deployment auf GitHub Pages
+#
+# Veröffentlicht NUR die unten gelisteten Website-Dateien. scripts/, LAUNCH.md,
+# .gitignore und .github/ bleiben im Repo, sind aber nicht öffentlich erreichbar.
+#
+# Einmalig einrichten: Repo → Settings → Pages → Source: „GitHub Actions“
+# (NICHT „Deploy from a branch“, sonst wäre das ganze Repo öffentlich).
+#
+# Neue Dateien oder Ordner im Root müssen unten in der Liste ergänzt werden.
+
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Repo auschecken
+        uses: actions/checkout@v4
+
+      - name: Nur Website-Dateien zusammenstellen
+        run: |
+          mkdir _site
+          cp -R \
+            index.html 404.html \
+            impressum datenschutz datenschutz-umfrage assets \
+            favicon.svg apple-touch-icon.png \
+            robots.txt sitemap.xml .nojekyll \
+            _site/
+          echo "Veröffentlicht werden:"
+          find _site -type f | sort
+
+      - name: Pages konfigurieren
+        uses: actions/configure-pages@v5
+
+      - name: Artefakt hochladen
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Veröffentlichen
+        id: deployment
+        uses: actions/deploy-pages@v4

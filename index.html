@@ -1,0 +1,658 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <!-- Sicherheit (GitHub Pages erlaubt keine eigenen HTTP-Header, daher per Meta; frame-ancestors geht per Meta nicht) -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://formspree.io; form-action https://formspree.io; img-src 'self' data:; font-src 'self'; style-src 'self'; script-src 'self'; base-uri 'self'; object-src 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>tasko | Bezahlte Aufgaben für Jugendliche</title>
+  <!-- TODO: Copy final -->
+  <meta name="description" content="Jobs für Jugendliche: Mit tasko Taschengeld verdienen ab 13. Legale Nebenjobs für Schüler und Nachbarschaftshilfe, sicher und mit Elternfreigabe.">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0A0A0B">
+  <link rel="canonical" href="https://taskoapp.de/">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="tasko">
+  <meta property="og:url" content="https://taskoapp.de/">
+  <meta property="og:title" content="tasko | Kleine Aufträge. Echte Erfahrung.">
+  <!-- TODO: og:description rechtlich prüfen lassen -->
+  <meta property="og:description" content="Bezahlte, legale Aufgaben für Jugendliche ab 13 aus der Nachbarschaft. Wir halten uns an das Jugendarbeitsschutzgesetz, und die Eltern sind immer mit an Bord.">
+  <meta property="og:image" content="https://taskoapp.de/assets/img/og/tasko-og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="tasko-Logo mit dem Claim „Kleine Aufträge. Echte Erfahrung.“">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="tasko | Kleine Aufträge. Echte Erfahrung.">
+  <!-- TODO: twitter:description rechtlich prüfen lassen -->
+  <meta name="twitter:description" content="Bezahlte, legale Aufgaben für Jugendliche ab 13 aus der Nachbarschaft. Wir halten uns an das Jugendarbeitsschutzgesetz, und die Eltern sind immer mit an Bord.">
+  <meta name="twitter:image" content="https://taskoapp.de/assets/img/og/tasko-og.jpg">
+
+  <!-- Setzt <html class="js"> vor dem ersten Paint (Reveal-Startzustände ohne Flackern) -->
+  <script src="/assets/js/early.js?v=8"></script>
+  <link rel="preload" href="/assets/fonts/poppins-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- ?v= bei jeder Änderung an CSS/JS hochzählen (Cache-Busting, siehe LAUNCH.md) -->
+  <link rel="stylesheet" href="/assets/css/style.css?v=10">
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "tasko",
+    "url": "https://taskoapp.de/",
+    "logo": "https://taskoapp.de/apple-touch-icon.png",
+    "email": "tasko.germany@gmail.com",
+    "telephone": "+49 151 42856976",
+    "slogan": "Kleine Aufträge. Echte Erfahrung."
+  }
+  </script>
+
+  <!-- TODO: optional Umami/Plausible, cookieless -->
+
+  <script src="/assets/js/main.js?v=8" defer></script>
+</head>
+<body>
+  <!-- Icon-Sprite -->
+  <svg width="0" height="0" class="visually-hidden" aria-hidden="true" focusable="false">
+    <symbol id="i-arrow" viewBox="0 0 16 16">
+      <path d="M4.5 11.5 11.5 4.5M5.5 4.5h6v6"/>
+    </symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8.5" r="3.5"/><path d="M3 19.5a6 6 0 0 1 12 0M15.5 5a3.5 3.5 0 0 1 0 7M17.5 14a6 6 0 0 1 3.5 5.5"/></symbol>
+    <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9.5 17.5h5M10.5 20.5h3M12 3.5a5.5 5.5 0 0 0-3.2 10c.5.4.7 1 .7 1.6v.4h5v-.4c0-.6.3-1.2.7-1.6A5.5 5.5 0 0 0 12 3.5Z"/></symbol>
+    <symbol id="i-levels" viewBox="0 0 24 24"><path d="M5.5 19.5v-4M12 19.5v-8M18.5 19.5v-13"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3.5 5.5 6v5.2c0 4 2.7 7.6 6.5 9.3 3.8-1.7 6.5-5.3 6.5-9.3V6L12 3.5Z"/><path d="m9.2 12 2 2 3.8-4"/></symbol>
+    <symbol id="i-badge" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="m8.6 12.2 2.3 2.3 4.5-4.8"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3.5" y="7.5" width="17" height="12" rx="3"/><path d="M9 7.5V6a1.5 1.5 0 0 1 1.5-1.5h3A1.5 1.5 0 0 1 15 6v1.5M3.5 13h17"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 4v16M8.5 20h7M5 7h14M7 7l-3 6.5a3 3 0 0 0 6 0L7 7ZM17 7l-3 6.5a3 3 0 0 0 6 0L17 7Z"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="3"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5M12 14.5v2"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3.5" y="5.5" width="17" height="13" rx="3"/><path d="m4.5 7.5 7.5 5.5 7.5-5.5"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M8.2 3.5H6A2.5 2.5 0 0 0 3.5 6c0 8 6.5 14.5 14.5 14.5a2.5 2.5 0 0 0 2.5-2.5v-1.9l-4-1.6-1.8 1.8a11 11 0 0 1-5-5l1.8-1.8-1.6-4H8.2Z"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+  <!-- ========== Navigation ========== -->
+  <header class="site-header">
+    <div class="container">
+    <nav class="nav" aria-label="Hauptnavigation">
+      <a class="nav__brand" href="#top" aria-label="tasko, zum Seitenanfang">
+        <img class="nav__badge" src="/assets/img/logo/tasko-badge.svg" alt="" width="32" height="32">
+        <!-- TODO: Wortmarke als SVG aus der Originaldatei exportieren -->
+        <img class="nav__wordmark" src="/assets/img/logo/tasko-wordmark.svg" alt="" width="68" height="22">
+      </a>
+
+      <ul class="nav__links" role="list">
+        <li><a class="nav__link" href="#idee">Idee</a></li>
+        <li><a class="nav__link" href="#sicherheit">Sicherheit</a></li>
+        <li><a class="nav__link" href="#team">Team</a></li>
+        <li><a class="nav__link" href="#kontakt">Kontakt</a></li>
+      </ul>
+
+      <a class="btn btn--primary btn--sm nav__cta" href="https://tally.so/r/EkyG24" target="_blank" rel="noopener">
+        <span class="label-long">Zur Umfrage</span><span class="label-short">Umfrage</span>
+        <svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg>
+        <span class="visually-hidden">(öffnet in neuem Tab)</span>
+      </a>
+
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menü öffnen">
+        <span class="nav__toggle-lines" aria-hidden="true"></span>
+      </button>
+    </nav>
+    </div>
+  </header>
+
+  <!-- ========== Mobil-Menü ========== -->
+  <div class="menu" id="menu">
+    <div class="menu__inner container">
+      <nav aria-label="Mobile Navigation">
+        <ul class="menu__list" role="list">
+          <li><a class="menu__link" href="#idee"><span class="menu__num" aria-hidden="true">01</span>Idee</a></li>
+          <li><a class="menu__link" href="#sicherheit"><span class="menu__num" aria-hidden="true">02</span>Sicherheit</a></li>
+          <li><a class="menu__link" href="#team"><span class="menu__num" aria-hidden="true">03</span>Team</a></li>
+          <li><a class="menu__link" href="#kontakt"><span class="menu__num" aria-hidden="true">04</span>Kontakt</a></li>
+        </ul>
+      </nav>
+      <div class="menu__foot">
+        <a class="btn btn--primary" href="https://tally.so/r/EkyG24" target="_blank" rel="noopener">
+          Zur Umfrage
+          <svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg>
+          <span class="visually-hidden">(öffnet in neuem Tab)</span>
+        </a>
+        <div class="menu__contact">
+          <a class="link" href="mailto:tasko.germany@gmail.com">tasko.germany@gmail.com</a>
+          <a class="link" href="tel:+4915142856976">0151 42856976</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main id="main" tabindex="-1">
+
+    <!-- ========== 1. Hero ========== -->
+    <section class="hero has-glow has-glow--tr" id="top" aria-labelledby="hero-title">
+      <div class="container hero__grid">
+        <div class="hero__text">
+          <!-- TODO: Copy final -->
+          <h1 class="hero__title" id="hero-title">
+            <span class="hero__line"><span class="w">Kleine</span> <span class="w">Aufträge.</span></span>
+            <em class="hl hero__line"><span class="w">Echte</span> <span class="w">Erfahrung.</span></em>
+          </h1>
+
+          <!-- TODO: Copy final -->
+          <!-- TODO: 2. Satz rechtlich prüfen lassen -->
+          <p class="lead hero__lead">tasko verbindet Jugendliche ab 13 mit bezahlten, legalen Aufgaben aus ihrer Nachbarschaft und aus Vereinen. Wir halten uns an das Jugendarbeitsschutzgesetz, und die Eltern sind immer mit an Bord.</p>
+
+          <div class="btn-row hero__actions">
+            <a class="btn btn--primary" href="https://tally.so/r/EkyG24" target="_blank" rel="noopener">
+              Zur Umfrage
+              <svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg>
+              <span class="visually-hidden">(öffnet in neuem Tab)</span>
+            </a>
+            <a class="btn btn--secondary" href="#so-gehts">So funktioniert's</a>
+          </div>
+        </div>
+
+        <!-- Abstraktes Smartphone-Mockup (dekorativ, keine echten Screens) -->
+        <div class="hero__visual" aria-hidden="true">
+          <div class="hero__phone-wrap">
+            <div class="phone">
+              <div class="phone__screen">
+                <span class="phone__island"></span>
+                <div class="sk-row">
+                  <span class="sk sk--avatar"></span>
+                  <span class="sk-stack">
+                    <span class="sk sk--w60"></span>
+                    <span class="sk sk--w35 sk--thin"></span>
+                  </span>
+                </div>
+                <div class="sk-level">
+                  <span class="sk sk--w40 sk--thin"></span>
+                  <span class="sk-level__track"><span class="sk-level__fill"></span></span>
+                  <span class="sk-row sk-row--between">
+                    <span class="sk sk--w25 sk--thin"></span>
+                    <span class="sk sk--w15 sk--thin"></span>
+                  </span>
+                </div>
+                <div class="sk-card">
+                  <span class="sk sk--square"></span>
+                  <span class="sk-stack">
+                    <span class="sk sk--w70"></span>
+                    <span class="sk sk--w45 sk--thin"></span>
+                  </span>
+                </div>
+                <div class="sk-card">
+                  <span class="sk sk--square"></span>
+                  <span class="sk-stack">
+                    <span class="sk sk--w55"></span>
+                    <span class="sk sk--w35 sk--thin"></span>
+                  </span>
+                </div>
+                <div class="sk-card">
+                  <span class="sk sk--square"></span>
+                  <span class="sk-stack">
+                    <span class="sk sk--w65"></span>
+                    <span class="sk sk--w40 sk--thin"></span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 2. Problem, Story & Lösung ========== -->
+    <section class="section idee has-glow has-glow--bl" id="idee" aria-labelledby="idee-title">
+      <div class="container">
+
+        <!-- Teil A: Problem -->
+        <div class="problem">
+          <div class="section__head" data-reveal-group>
+            <!-- TODO: Copy final -->
+            <p class="eyebrow">Das Problem</p>
+            <h2 id="idee-title">Ob du arbeiten lernst, <em class="hl">entscheidet dein Zuhause.</em></h2>
+          </div>
+
+          <figure class="stats" data-reveal-group>
+            <div class="stats__row">
+              <div class="stat">
+                <!-- TODO: Copy final -->
+                <p class="stat__value"><span aria-hidden="true">~</span><span class="visually-hidden">rund </span>30<span class="stat__unit">&nbsp;%</span></p>
+                <p class="stat__label">einkommensschwache Familien</p>
+              </div>
+              <span class="stats__vs" aria-hidden="true">vs</span>
+              <div class="stat stat--accent">
+                <p class="stat__value"><span aria-hidden="true">~</span><span class="visually-hidden">rund </span>60<span class="stat__unit">&nbsp;%</span></p>
+                <p class="stat__label">wohlhabende Familien</p>
+              </div>
+            </div>
+            <figcaption class="stats__caption">
+              <!-- TODO: Copy final -->
+              <p>Anteil der 17-Jährigen mit Nebenjob-Erfahrung, nach Haushaltseinkommen.</p>
+              <!-- TODO: Link zur Studie ergänzen und Zahlen gegenprüfen -->
+              <p class="stats__source">Quelle: Institut der deutschen Wirtschaft (IW Köln), SOEP-Daten 2018 bis 2020</p>
+            </figcaption>
+          </figure>
+        </div>
+
+        <!-- Teil B: Gründungsstory -->
+        <div class="story">
+          <figure class="story__media">
+            <div class="story__photos" data-reveal-group>
+              <div class="photo-card photo-card--a">
+                <div class="photo-card__frame">
+                  <!-- TODO: Alt-Texte prüfen -->
+                  <picture>
+                    <source type="image/webp" srcset="/assets/img/story/pizzeria-teig-640.webp 640w, /assets/img/story/pizzeria-teig.webp 952w" sizes="(min-width: 960px) 320px, 62vw">
+                    <img src="/assets/img/story/pizzeria-teig.jpg" srcset="/assets/img/story/pizzeria-teig-640.jpg 640w, /assets/img/story/pizzeria-teig.jpg 952w" sizes="(min-width: 960px) 320px, 62vw" width="952" height="1190" loading="lazy" decoding="async" alt="Dion und Dana als Kinder beim Teigkneten an der Theke der Familienpizzeria">
+                  </picture>
+                </div>
+              </div>
+              <div class="photo-card photo-card--b">
+                <div class="photo-card__frame">
+                  <!-- TODO: Alt-Texte prüfen -->
+                  <picture>
+                    <source type="image/webp" srcset="/assets/img/story/pizzeria-kueche-640.webp 640w, /assets/img/story/pizzeria-kueche.webp 952w" sizes="(min-width: 960px) 300px, 58vw">
+                    <img src="/assets/img/story/pizzeria-kueche.jpg" srcset="/assets/img/story/pizzeria-kueche-640.jpg 640w, /assets/img/story/pizzeria-kueche.jpg 952w" sizes="(min-width: 960px) 300px, 58vw" width="952" height="1190" loading="lazy" decoding="async" alt="Dion und Dana als Kinder in Arbeitskleidung in der Küche der Pizzeria">
+                  </picture>
+                </div>
+              </div>
+            </div>
+            <!-- TODO: Copy final -->
+            <!-- TODO: Jahr ergänzen -->
+            <figcaption class="story__caption" data-reveal>Unsere ersten Arbeitstage in der Familienpizzeria.</figcaption>
+          </figure>
+
+          <div class="story__text" data-reveal-group>
+            <!-- TODO: Copy final -->
+            <h3 class="eyebrow">Warum wir das machen</h3>
+            <blockquote class="story__quote">
+              <p>„Warum arbeitest du jedes Wochenende?“</p>
+            </blockquote>
+            <!-- TODO: Copy final -->
+            <p class="story__body">Diese Frage hat Dion ein Mitschüler gestellt. Wir sind in der Pizzeria unserer Familie groß geworden: Teig kneten, Kartons falten und spülen.</p>
+            <p class="story__body">Was für uns normal war, hatten die meisten anderen nicht: echte Verantwortung, eigenes Geld und das Gefühl, gebraucht zu werden. tasko soll diesen Vorsprung für alle zugänglich machen, unabhängig vom Elternhaus.</p>
+          </div>
+        </div>
+
+        <!-- Teil C: Lösung -->
+        <div class="statement" data-reveal>
+          <!-- TODO: Copy final -->
+          <p class="statement__text">tasko bringt Jugendlichen bei, was Arbeit bedeutet: mit <em class="hl">echten, bezahlten Aufgaben</em> in ihrer Nachbarschaft, <em class="hl">rechtssicher</em> und für Eltern <em class="hl">voll transparent</em>.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========== 3. So funktioniert's ========== -->
+    <section class="section how" id="so-gehts" aria-labelledby="so-gehts-title">
+      <div class="container" data-tabs>
+        <div class="section__head section__head--split" data-reveal-group>
+          <!-- TODO: Copy final -->
+          <p class="eyebrow">So funktioniert's</p>
+          <h2 id="so-gehts-title">Einfach für alle Seiten.</h2>
+          <div class="segment section__head-aside" role="tablist" aria-label="Ablauf anzeigen für">
+            <span class="segment__indicator" aria-hidden="true"></span>
+            <button class="segment__tab" type="button" role="tab" id="tab-jugendliche" aria-controls="panel-jugendliche" aria-selected="true">Für Jugendliche</button>
+            <button class="segment__tab" type="button" role="tab" id="tab-auftraggeber" aria-controls="panel-auftraggeber" aria-selected="false" tabindex="-1">Für Auftraggeber</button>
+          </div>
+        </div>
+
+        <div class="tabs" data-reveal>
+          <div class="tabs__panel" role="tabpanel" id="panel-jugendliche" aria-labelledby="tab-jugendliche" tabindex="0">
+            <h3 class="tabs__panel-title">Für Jugendliche</h3>
+            <!-- TODO: Copy final -->
+            <ol class="steps" role="list">
+              <li class="step">
+                <span class="step__num" aria-hidden="true">01</span>
+                <h4 class="step__title">Aufgabe finden</h4>
+                <p class="step__text">Rasen mähen, beim Vereinsfest helfen, Einkäufe tragen: Aufgaben aus deiner Nähe, passend zu deinem Alter.</p>
+              </li>
+              <li class="step">
+                <span class="step__num" aria-hidden="true">02</span>
+                <h4 class="step__title">Eltern geben frei</h4>
+                <p class="step__text">Deine Eltern bestätigen mit einem Tipp und behalten jederzeit den Überblick.</p>
+              </li>
+              <li class="step">
+                <span class="step__num" aria-hidden="true">03</span>
+                <h4 class="step__title">Erledigen und wachsen</h4>
+                <p class="step__text">Du verdienst echtes Geld, sammelst Erfahrung und steigst mit jeder Aufgabe ein Level auf.</p>
+              </li>
+            </ol>
+          </div>
+
+          <div class="tabs__panel" role="tabpanel" id="panel-auftraggeber" aria-labelledby="tab-auftraggeber" tabindex="0">
+            <h3 class="tabs__panel-title">Für Auftraggeber</h3>
+            <!-- TODO: Copy final -->
+            <ol class="steps" role="list">
+              <li class="step">
+                <span class="step__num" aria-hidden="true">01</span>
+                <h4 class="step__title">Aufgabe einstellen</h4>
+                <p class="step__text">Beschreib kurz, wobei du Hilfe brauchst, ob als Nachbar, Verein oder lokaler Betrieb.</p>
+              </li>
+              <li class="step">
+                <span class="step__num" aria-hidden="true">02</span>
+                <h4 class="step__title">Verifiziert loslegen</h4>
+                <p class="step__text">Auftraggeber werden geprüft. Auf Zeitlimits und erlaubte Tätigkeiten achtet tasko automatisch.</p>
+              </li>
+              <li class="step">
+                <span class="step__num" aria-hidden="true">03</span>
+                <h4 class="step__title">Hilfe bekommen</h4>
+                <p class="step__text">Du bekommst verlässliche Unterstützung aus deiner Nachbarschaft, ohne rechtliches Rätselraten.</p>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="how__extras">
+          <!-- TODO: Copy final -->
+          <ul class="chips" role="list" aria-label="Was tasko mitbringt" data-reveal-group>
+            <li class="feature-chip"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-levels"/></svg>Level &amp; XP</li>
+            <li class="feature-chip"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-shield"/></svg>Elternfreigabe</li>
+            <li class="feature-chip"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-badge"/></svg>Verifizierte Auftraggeber</li>
+            <li class="feature-chip"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-clock"/></svg>Automatische Zeitlimits</li>
+            <li class="feature-chip"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-briefcase"/></svg>Erfahrung, die später zählt</li>
+          </ul>
+
+          <!-- Teaser-Mockup: stark angeschnitten und geblurrt, keine Inhalte -->
+          <div class="teaser" data-reveal>
+            <div class="teaser__phone" aria-hidden="true">
+              <div class="phone">
+                <div class="phone__screen">
+                  <span class="phone__island"></span>
+                  <div class="sk-level">
+                    <span class="sk sk--w40 sk--thin"></span>
+                    <span class="sk-level__track"><span class="sk-level__fill"></span></span>
+                  </div>
+                  <div class="sk-card"><span class="sk sk--square"></span><span class="sk-stack"><span class="sk sk--w70"></span><span class="sk sk--w45 sk--thin"></span></span></div>
+                  <div class="sk-card"><span class="sk sk--square"></span><span class="sk-stack"><span class="sk sk--w55"></span><span class="sk sk--w35 sk--thin"></span></span></div>
+                  <div class="sk-card"><span class="sk sk--square"></span><span class="sk-stack"><span class="sk sk--w65"></span><span class="sk sk--w40 sk--thin"></span></span></div>
+                </div>
+              </div>
+            </div>
+            <!-- TODO: Copy final -->
+            <p class="teaser__label">Bald mehr.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 4. Umfrage ========== -->
+    <section class="section" id="umfrage" aria-labelledby="umfrage-title">
+      <div class="container">
+        <div class="survey" data-reveal>
+          <!-- Umlaufender Lichtsaum (dekorativ) -->
+          <div class="survey__ring" aria-hidden="true"><span class="survey__light"></span></div>
+
+          <div class="survey__grid">
+            <div class="survey__main">
+              <!-- TODO: Copy final -->
+              <p class="eyebrow">Mach mit</p>
+              <h2 id="umfrage-title">Bau tasko <em class="hl">mit uns.</em></h2>
+              <!-- TODO: Copy final -->
+              <p class="survey__text">Wir entwickeln tasko gemeinsam mit den Menschen, die es später nutzen. Ob Elternteil, Jugendliche:r, Verein oder Auftraggeber: Deine Antworten entscheiden mit, was wir bauen.</p>
+
+              <div class="survey__cta">
+                <a class="btn btn--primary btn--lg btn--sheen" href="https://tally.so/r/EkyG24" target="_blank" rel="noopener" aria-describedby="survey-hint">
+                  Zur Umfrage
+                  <svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg>
+                </a>
+                <!-- TODO: Copy final -->
+                <p class="survey__hint"><span id="survey-hint">Öffnet tally.so in einem neuen Tab.</span> <a class="link" href="/datenschutz-umfrage/">Datenschutzhinweise zur Umfrage</a></p>
+              </div>
+            </div>
+
+            <ul class="survey__meta" role="list">
+              <li>
+                <span class="icon-frame" aria-hidden="true"><svg class="icon"><use href="#i-clock"/></svg></span>
+                <span><span class="survey__meta-label">Dauer</span>ca. 3 Minuten</span>
+              </li>
+              <li>
+                <span class="icon-frame" aria-hidden="true"><svg class="icon"><use href="#i-users"/></svg></span>
+                <!-- TODO: Copy final -->
+                <span><span class="survey__meta-label">Für wen</span>Eltern, Jugendliche &amp; Auftraggeber</span>
+              </li>
+              <li>
+                <span class="icon-frame" aria-hidden="true"><svg class="icon"><use href="#i-bulb"/></svg></span>
+                <!-- TODO: Angabe zur Anonymität nur, wenn die Tally-Umfrage tatsächlich anonym ist -->
+                <span><span class="survey__meta-label">Deine Antworten</span>Hilft uns bei der Entwicklung</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 5. Sicherheit & Vertrauen ========== -->
+    <section class="section has-glow has-glow--bl" id="sicherheit" aria-labelledby="sicherheit-title">
+      <div class="container">
+        <div class="section__head section__head--split" data-reveal-group>
+          <!-- TODO: Copy final -->
+          <p class="eyebrow">Sicherheit &amp; Vertrauen</p>
+          <h2 id="sicherheit-title">Sicherheit steht bei uns <em class="hl">an erster Stelle.</em></h2>
+          <!-- TODO: Copy final -->
+          <p class="lead section__head-aside">Wenn Jugendliche für andere arbeiten, müssen Eltern ruhig schlafen können. Deshalb denken wir Schutz von Anfang an mit, in jeder Funktion.</p>
+        </div>
+
+        <ul class="safety" role="list" data-reveal-group>
+          <li class="safety-card safety-card--main">
+            <span class="icon-frame" aria-hidden="true"><svg class="icon"><use href="#i-shield"/></svg></span>
+            <div class="safety-card__body">
+              <!-- TODO: Copy final -->
+              <h3 class="safety-card__title">Kindersicherheit, von Anfang an mitgedacht</h3>
+              <p class="safety-card__text">Identität, Transparenz und schnelle Reaktion sind fester Teil der Architektur. Als nächsten Schritt entwickeln wir unser Schutzkonzept gemeinsam mit Kinderschutz-Fachleuten.</p>
+            </div>
+          </li>
+          <li class="safety-card safety-card--wide">
+            <span class="icon-frame" aria-hidden="true"><svg class="icon"><use href="#i-eye"/></svg></span>
+            <!-- TODO: Copy final -->
+            <h3 class="safety-card__title">Eltern behalten den Überblick</h3>
+            <p class="safety-card__text">Jede Aufgabe braucht eure Freigabe. Ihr seht, wer was wann macht.</p>
+          </li>
+          <li class="safety-card safety-card--narrow">
+            <span class="icon-frame" aria-hidden="true"><svg class="icon"><use href="#i-badge"/></svg></span>
+            <!-- TODO: Copy final -->
+            <h3 class="safety-card__title">Verifizierte Auftraggeber</h3>
+            <p class="safety-card__text">Wer Aufgaben anbietet, wird geprüft. Anonyme Angebote gibt es nicht.</p>
+          </li>
+          <li class="safety-card safety-card--narrow">
+            <span class="icon-frame" aria-hidden="true"><svg class="icon"><use href="#i-scale"/></svg></span>
+            <!-- TODO: Copy final -->
+            <!-- TODO: Formulierung rechtlich prüfen lassen -->
+            <h3 class="safety-card__title">Rechtssicher nach JArbSchG</h3>
+            <p class="safety-card__text">Erlaubte Tätigkeiten und Zeitlimits nach dem Jugendarbeitsschutzgesetz sind eingebaut. Schule geht vor.</p>
+          </li>
+          <li class="safety-card safety-card--wide">
+            <span class="icon-frame" aria-hidden="true"><svg class="icon"><use href="#i-lock"/></svg></span>
+            <!-- TODO: Copy final -->
+            <h3 class="safety-card__title">Datensparsam</h3>
+            <p class="safety-card__text">Wir erheben nur, was wirklich nötig ist.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========== 6. Team ========== -->
+    <section class="section" id="team" aria-labelledby="team-title">
+      <div class="container team-layout">
+        <div class="section__head" data-reveal-group>
+          <!-- TODO: Copy final -->
+          <p class="eyebrow">Das Team</p>
+          <h2 id="team-title">Wir sind <em class="hl">Dion und Dana.</em></h2>
+          <!-- TODO: Copy final -->
+          <p class="lead">Wir haben selbst erlebt, was frühe Arbeitserfahrung bewirkt. Jetzt bauen wir, was wir damals allen gewünscht hätten.</p>
+        </div>
+
+        <ul class="team" role="list" data-reveal-group>
+          <li class="member">
+            <!-- TODO: Teamfoto fehlt noch – Platzhalter (Personen-Icon). Original ablegen und „python3 scripts/images.py assets/img/team/dion.jpg“ ausführen -->
+            <picture class="member__photo">
+              <source type="image/webp" srcset="/assets/img/team/dion-640.webp 640w, /assets/img/team/dion.webp 960w" sizes="(min-width: 960px) 420px, (min-width: 760px) 45vw, 90vw">
+              <img src="/assets/img/team/dion.jpg" srcset="/assets/img/team/dion-640.jpg 640w, /assets/img/team/dion.jpg 960w" sizes="(min-width: 960px) 420px, (min-width: 760px) 45vw, 90vw" width="960" height="1200" loading="lazy" decoding="async" alt="Porträt von Dion Schulte">
+            </picture>
+            <div class="member__body">
+              <!-- TODO: Copy final -->
+              <h3 class="member__name">Dion Schulte</h3>
+              <p class="member__role">Gründer</p>
+              <blockquote class="member__quote">
+                <p>„Die Vision, die ich mit 13 in der Pizzeria hatte, wird jetzt tasko.“</p>
+              </blockquote>
+            </div>
+          </li>
+          <li class="member">
+            <!-- TODO: Teamfoto fehlt noch – Platzhalter (Personen-Icon). Original ablegen und „python3 scripts/images.py assets/img/team/dana.jpg“ ausführen -->
+            <picture class="member__photo">
+              <source type="image/webp" srcset="/assets/img/team/dana-640.webp 640w, /assets/img/team/dana.webp 960w" sizes="(min-width: 960px) 420px, (min-width: 760px) 45vw, 90vw">
+              <img src="/assets/img/team/dana.jpg" srcset="/assets/img/team/dana-640.jpg 640w, /assets/img/team/dana.jpg 960w" sizes="(min-width: 960px) 420px, (min-width: 760px) 45vw, 90vw" width="960" height="1200" loading="lazy" decoding="async" alt="Porträt von Dana Schulte">
+            </picture>
+            <div class="member__body">
+              <!-- TODO: Copy final -->
+              <h3 class="member__name">Dana Schulte</h3>
+              <p class="member__role">Co-Founderin</p>
+              <blockquote class="member__quote">
+                <p>„Ich stand mit meinem Bruder in derselben Küche. Jetzt bauen wir zusammen etwas Neues.“</p>
+              </blockquote>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========== 7. Kontakt ========== -->
+    <section class="section has-glow has-glow--tr" id="kontakt" aria-labelledby="kontakt-title">
+      <div class="container contact">
+        <div class="contact__intro" data-reveal-group>
+          <!-- TODO: Copy final -->
+          <p class="eyebrow">Kontakt</p>
+          <h2 id="kontakt-title">Lass uns <em class="hl">reden.</em></h2>
+          <!-- TODO: Copy final -->
+          <p class="contact__text">Du hast uns bei einem Pitch gesehen, willst Partner werden, eine Aufgabe anbieten oder einfach Fragen stellen? Schreib uns, wir melden uns persönlich.</p>
+
+          <ul class="contact__links" role="list">
+            <li>
+              <a class="contact-row" href="mailto:tasko.germany@gmail.com">
+                <span class="icon-frame" aria-hidden="true"><svg class="icon"><use href="#i-mail"/></svg></span>
+                <span class="contact-row__text"><span class="contact-row__label">E-Mail</span>tasko.germany@<wbr>gmail.com</span>
+                <svg class="contact-row__arrow" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg>
+              </a>
+            </li>
+            <li>
+              <a class="contact-row" href="tel:+4915142856976">
+                <span class="icon-frame" aria-hidden="true"><svg class="icon"><use href="#i-phone"/></svg></span>
+                <span class="contact-row__text"><span class="contact-row__label">Telefon</span>0151 42856976</span>
+                <svg class="contact-row__arrow" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="contact__card glass" data-reveal>
+          <form class="form" id="contact-form" action="https://formspree.io/f/xkjogzjv" method="POST" aria-describedby="form-privacy">
+            <input type="hidden" name="_subject" value="Neue Nachricht über die tasko-Website">
+
+            <div class="form__row">
+              <div class="field">
+                <label class="field__label" for="f-name">Name <span aria-hidden="true">*</span></label>
+                <input class="field__input" id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="f-name-error">
+                <p class="field__error" id="f-name-error" data-msg-missing="Bitte gib deinen Namen ein."></p>
+              </div>
+              <div class="field">
+                <label class="field__label" for="f-email">E-Mail <span aria-hidden="true">*</span></label>
+                <input class="field__input" id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="f-email-error">
+                <p class="field__error" id="f-email-error" data-msg-missing="Bitte gib deine E-Mail-Adresse ein." data-msg-invalid="Bitte gib eine gültige E-Mail-Adresse ein, z. B. name@beispiel.de."></p>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="f-role">Ich bin … <span aria-hidden="true">*</span></label>
+              <select class="field__input field__select" id="f-role" name="rolle" required aria-describedby="f-role-error">
+                <option value="" selected disabled>Bitte auswählen</option>
+                <option>Elternteil</option>
+                <option>Jugendliche:r</option>
+                <option>Auftraggeber:in</option>
+                <option>Verein</option>
+                <option>Partner:in / Investor:in</option>
+                <option>Presse</option>
+              </select>
+              <p class="field__error" id="f-role-error" data-msg-missing="Bitte wähle aus, wer du bist."></p>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="f-message">Nachricht <span aria-hidden="true">*</span></label>
+              <textarea class="field__input field__textarea" id="f-message" name="nachricht" rows="4" required aria-describedby="f-message-error"></textarea>
+              <p class="field__error" id="f-message-error" data-msg-missing="Bitte schreib uns eine kurze Nachricht."></p>
+            </div>
+
+            <!-- Honeypot gegen Spam: für Menschen unsichtbar -->
+            <div class="visually-hidden" aria-hidden="true">
+              <label for="f-gotcha">Dieses Feld bitte leer lassen</label>
+              <input id="f-gotcha" type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+            </div>
+
+            <!-- TODO: Copy final -->
+            <p class="form__privacy" id="form-privacy">Mit dem Absenden werden deine Angaben zur Bearbeitung deiner Anfrage verarbeitet. Mehr in der <a class="link" href="/datenschutz/">Datenschutzerklärung</a>.</p>
+
+            <div class="form__footer">
+              <button class="btn btn--primary form__submit" type="submit">
+                <span class="form__submit-label">Nachricht senden</span>
+                <svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg>
+              </button>
+              <p class="form__required"><span aria-hidden="true">*</span> Pflichtfeld</p>
+            </div>
+
+            <!-- TODO: Copy final -->
+            <div class="form__status" role="status" aria-live="polite" data-msg-success="Danke! Deine Nachricht ist angekommen. Wir melden uns bald." data-msg-error="Das hat leider nicht geklappt. Schreib uns gern direkt an tasko.germany@gmail.com."></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== Footer ========== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a class="footer__logo" href="#top" aria-label="tasko, zum Seitenanfang">
+            <!-- TODO: höher aufgelöste Datei bzw. SVG des gestapelten Logos nachliefern (aktuell 264×278 px) -->
+            <img class="footer__logo-img" src="/assets/img/logo/tasko-logo-dark.png" alt="" width="264" height="278" loading="lazy" decoding="async">
+          </a>
+          <!-- TODO: Copy final -->
+          <p class="footer__claim">Kleine Aufträge. <em class="hl">Echte Erfahrung.</em></p>
+        </div>
+
+        <div class="footer__col">
+          <h2>Kontakt</h2>
+          <ul role="list">
+            <li><a class="link" href="mailto:tasko.germany@gmail.com">tasko.germany@gmail.com</a></li>
+            <li><a class="link" href="tel:+4915142856976">0151 42856976</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h2>Rechtliches</h2>
+          <ul role="list">
+            <li><a class="link" href="/impressum/">Impressum</a></li>
+            <li><a class="link" href="/datenschutz/">Datenschutz</a></li>
+            <li><a class="link" href="/datenschutz-umfrage/">Datenschutzhinweise zur Umfrage</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>© 2026 tasko</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
