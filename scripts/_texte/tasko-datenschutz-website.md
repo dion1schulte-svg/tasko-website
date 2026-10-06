@@ -1,11 +1,5 @@
 # Datenschutzerklärung
 
-> Entwurf für die tasko-Website auf Basis eurer Umfrage-Datenschutzhinweise.
-> Stellen in [ECKIGEN KLAMMERN] vor Veröffentlichung prüfen bzw. ergänzen.
-> Kein Ersatz für eine rechtliche Prüfung. Mit eRecht24 gegenchecken.
-
----
-
 ## Kurz gesagt
 
 - Diese Website setzt keine Cookies ein und nutzt kein Tracking.

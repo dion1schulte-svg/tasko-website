@@ -84,13 +84,13 @@ anderen Hosting.
 
 ## 4. Rechtstexte
 
-- [ ] Impressum: Anschrift, verantwortliche Person, finaler Text (eRecht24) – `impressum/index.html`
+- [x] Impressum: Anschrift eingetragen, Abschnitt „Verantwortlich für den Inhalt“ entfernt – `impressum/index.html`
 - [ ] Nach der Gründung: Impressum auf die Gesellschaft umstellen
 - [ ] Datenschutzerklärung rechtlich prüfen, Stand-Datum aktuell halten – `datenschutz/index.html` (Quelltext: `scripts/_texte/tasko-datenschutz-website.md`)
 - [ ] Abschnitt 5 Datenschutz anpassen, sobald Domain-Mail aktiv ist.
 - [ ] Datenschutzhinweise zur Umfrage rechtlich prüfen, Stand-Datum aktuell halten – `datenschutz-umfrage/index.html`
 - Quelltexte der Rechtstexte (Markdown) liegen in `scripts/_texte/`. Sie sind im Repo, werden aber nicht veröffentlicht.
-- [ ] Hinweis-Box „Entwurf …“ auf beiden Seiten entfernen
+- [x] Entwurfshinweise auf Impressum und Datenschutz entfernt
 - [ ] JArbSchG-Formulierungen rechtlich prüfen lassen (Hero-Subline, OG-/Twitter-Description, Sicherheitskarte)
 - [ ] Umfrage: Angabe zur Anonymität nur, wenn die Tally-Umfrage wirklich anonym ist
 
