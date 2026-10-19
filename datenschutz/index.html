@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <!-- Sicherheit (GitHub Pages erlaubt keine eigenen HTTP-Header, daher per Meta; frame-ancestors geht per Meta nicht) -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://formspree.io; form-action https://formspree.io; img-src 'self' data:; font-src 'self'; style-src 'self'; script-src 'self'; base-uri 'self'; object-src 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; font-src 'self'; style-src 'self'; script-src 'none'; form-action 'none'; base-uri 'self'; object-src 'none'">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Datenschutz | tasko</title>
   <meta name="description" content="Datenschutzerklärung von tasko: welche Daten wir verarbeiten und welche Rechte du hast.">
@@ -12,15 +12,14 @@
   <meta name="theme-color" content="#0A0A0B">
   <link rel="canonical" href="https://taskoapp.de/datenschutz/">
 
-  <script src="/assets/js/early.js?v=8"></script>
   <link rel="preload" href="/assets/fonts/poppins-700.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/css/style.css?v=10">
+  <link rel="stylesheet" href="/assets/css/style.css?v=12">
+  <link rel="stylesheet" href="/assets/css/header.css?v=1">
 
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-  <script src="/assets/js/main.js?v=8" defer></script>
 </head>
 <body>
   <svg width="0" height="0" class="visually-hidden" aria-hidden="true" focusable="false">
@@ -31,60 +30,18 @@
 
   <a class="skip-link" href="#main">Zum Inhalt springen</a>
 
-  <!-- ========== Navigation ========== -->
-  <header class="site-header">
-    <div class="container">
-    <nav class="nav" aria-label="Hauptnavigation">
-      <a class="nav__brand" href="/" aria-label="tasko, zur Startseite">
-        <img class="nav__badge" src="/assets/img/logo/tasko-badge.svg" alt="" width="32" height="32">
-        <!-- TODO: Wortmarke als SVG aus der Originaldatei exportieren -->
-        <img class="nav__wordmark" src="/assets/img/logo/tasko-wordmark.svg" alt="" width="68" height="22">
-      </a>
-
-      <ul class="nav__links" role="list">
-        <li><a class="nav__link" href="/#idee">Idee</a></li>
-        <li><a class="nav__link" href="/#sicherheit">Sicherheit</a></li>
-        <li><a class="nav__link" href="/#team">Team</a></li>
-        <li><a class="nav__link" href="/#kontakt">Kontakt</a></li>
-      </ul>
-
-      <a class="btn btn--primary btn--sm nav__cta" href="https://tally.so/r/EkyG24" target="_blank" rel="noopener">
-        <span class="label-long">Zur Umfrage</span><span class="label-short">Umfrage</span>
-        <svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg>
-        <span class="visually-hidden">(öffnet in neuem Tab)</span>
-      </a>
-
-      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menü öffnen">
-        <span class="nav__toggle-lines" aria-hidden="true"></span>
-      </button>
+  <!-- ========== Kopfzeile ========== -->
+  <header class="topbar">
+    <a class="topbar__brand" href="/" aria-label="tasko, zur Startseite">
+      <img class="topbar__badge" src="/assets/img/logo/tasko-badge.svg" alt="" width="36" height="36">
+      <img class="topbar__wordmark" src="/assets/img/logo/tasko-wordmark.svg" alt="" width="75" height="24">
+    </a>
+    <nav class="topbar__nav" aria-label="Hauptnavigation">
+      <a class="topbar__link" href="/#app">App</a>
+      <a class="topbar__link" href="/#kontakt">Kontakt</a>
+      <a class="topbar__cta" href="https://tally.so/r/EkyG24" target="_blank" rel="noopener">Zur Umfrage<span class="visually-hidden"> (öffnet in neuem Tab)</span></a>
     </nav>
-    </div>
   </header>
-
-  <!-- ========== Mobil-Menü ========== -->
-  <div class="menu" id="menu">
-    <div class="menu__inner container">
-      <nav aria-label="Mobile Navigation">
-        <ul class="menu__list" role="list">
-          <li><a class="menu__link" href="/#idee"><span class="menu__num" aria-hidden="true">01</span>Idee</a></li>
-          <li><a class="menu__link" href="/#sicherheit"><span class="menu__num" aria-hidden="true">02</span>Sicherheit</a></li>
-          <li><a class="menu__link" href="/#team"><span class="menu__num" aria-hidden="true">03</span>Team</a></li>
-          <li><a class="menu__link" href="/#kontakt"><span class="menu__num" aria-hidden="true">04</span>Kontakt</a></li>
-        </ul>
-      </nav>
-      <div class="menu__foot">
-        <a class="btn btn--primary" href="https://tally.so/r/EkyG24" target="_blank" rel="noopener">
-          Zur Umfrage
-          <svg class="btn__icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg>
-          <span class="visually-hidden">(öffnet in neuem Tab)</span>
-        </a>
-        <div class="menu__contact">
-          <a class="link" href="mailto:tasko.germany@gmail.com">tasko.germany@gmail.com</a>
-          <a class="link" href="tel:+4915142856976">0151 42856976</a>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <main id="main" tabindex="-1">
     <article class="legal container" aria-labelledby="legal-title">
@@ -99,13 +56,12 @@
           <li><a class="link" href="#verantwortlich">1. Wer ist verantwortlich?</a></li>
           <li><a class="link" href="#hosting">2. Hosting und Server-Logfiles</a></li>
           <li><a class="link" href="#schriften">3. Schriften</a></li>
-          <li><a class="link" href="#kontaktformular">4. Kontaktformular</a></li>
-          <li><a class="link" href="#kontakt">5. Kontakt per E-Mail oder Telefon</a></li>
-          <li><a class="link" href="#umfrage">6. Umfrage über Tally</a></li>
-          <li><a class="link" href="#cookies">7. Keine Cookies, kein Tracking</a></li>
-          <li><a class="link" href="#rechte">8. Deine Rechte</a></li>
-          <li><a class="link" href="#entscheidungen">9. Keine automatisierten Entscheidungen</a></li>
-          <li><a class="link" href="#aenderungen">10. Änderungen</a></li>
+          <li><a class="link" href="#kontakt">4. Kontakt per E-Mail oder Telefon</a></li>
+          <li><a class="link" href="#umfrage">5. Umfrage über Tally</a></li>
+          <li><a class="link" href="#cookies">6. Keine Cookies, kein Tracking</a></li>
+          <li><a class="link" href="#rechte">7. Deine Rechte</a></li>
+          <li><a class="link" href="#entscheidungen">8. Keine automatisierten Entscheidungen</a></li>
+          <li><a class="link" href="#aenderungen">9. Änderungen</a></li>
         </ol>
       </nav>
 
@@ -113,7 +69,7 @@
       <ul>
         <li>Diese Website setzt keine Cookies ein und nutzt kein Tracking.</li>
         <li>Schriften und alle Inhalte werden direkt von unserem Hosting geladen. Es werden keine Daten an Google Fonts oder ähnliche Dienste übertragen.</li>
-        <li>Personenbezogene Daten verarbeiten wir nur, wenn du die Seite aufrufst (technisch notwendig) oder uns über das Kontaktformular, per E-Mail oder per Telefon kontaktierst.</li>
+        <li>Personenbezogene Daten verarbeiten wir nur, wenn du die Seite aufrufst (technisch notwendig) oder uns per E-Mail oder per Telefon kontaktierst.</li>
         <li>Die Umfrage läuft extern bei Tally. Daten gehen dorthin erst, wenn du auf den Umfrage-Link klickst.</li>
       </ul>
 
@@ -135,30 +91,18 @@
       <h2 id="schriften">3. Schriften</h2>
       <p>Wir verwenden die Schriften Poppins und Inter. Sie sind zusammen mit der Website gespeichert und werden beim Aufruf der Seite von dort geladen. Eine Verbindung zu Servern von Google oder anderen Anbietern findet dabei nicht statt.</p>
 
-      <h2 id="kontaktformular">4. Kontaktformular</h2>
-      <p>Wenn du uns über das Kontaktformular schreibst, verarbeiten wir die Angaben, die du dort machst:</p>
-      <ul>
-        <li>Name</li>
-        <li>E-Mail-Adresse</li>
-        <li>deine Rolle (z. B. Elternteil, Auftraggeber:in, Presse)</li>
-        <li>deine Nachricht</li>
-      </ul>
-      <p>Wir nutzen diese Daten ausschließlich, um deine Anfrage zu beantworten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, wenn deine Anfrage auf eine Zusammenarbeit oder einen Vertrag abzielt, und im Übrigen unser berechtigtes Interesse an der Beantwortung von Anfragen (Art. 6 Abs. 1 lit. f DSGVO).</p>
-      <p>Für das Formular nutzen wir den Dienst Formspree der Formspree, Inc., USA. Formspree nimmt die Formulardaten entgegen und leitet sie per E-Mail an uns weiter. Dabei werden deine Angaben in die USA übermittelt. Weitere Informationen findest du in der <a class="link" href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener">Datenschutzerklärung von Formspree</a>.</p>
-      <p>Zum Schutz vor Spam enthält das Formular ein unsichtbares Feld. Dabei werden keine zusätzlichen Daten über dich erhoben.</p>
-      <p>Wir löschen deine Anfrage, sobald sie vollständig bearbeitet ist und keine gesetzlichen Aufbewahrungspflichten entgegenstehen. Spätestens sechs Monate nach Abschluss der Bearbeitung löschen wir sie.</p>
+      <h2 id="kontakt">4. Kontakt per E-Mail oder Telefon</h2>
+      <p>Wenn du uns per E-Mail oder Telefon kontaktierst, verarbeiten wir deine Angaben (z. B. Name, E-Mail-Adresse, Telefonnummer und den Inhalt deiner Nachricht), um dein Anliegen zu bearbeiten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, wenn deine Anfrage eine mögliche Zusammenarbeit betrifft, und im Übrigen unser berechtigtes Interesse an der Beantwortung von Anfragen (Art. 6 Abs. 1 lit. f DSGVO).</p>
+      <p>Unser E-Mail-Postfach wird bei Google (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland) betrieben. E-Mails, die du an uns schickst, werden dort gespeichert. Dabei kann eine Übermittlung an die Google LLC in den USA nicht ausgeschlossen werden. Google ist nach dem EU-US Data Privacy Framework zertifiziert.</p>
+      <p>Wir löschen deine Angaben, sobald dein Anliegen erledigt ist, spätestens sechs Monate nach Abschluss der Bearbeitung, sofern keine gesetzlichen Aufbewahrungspflichten entgegenstehen.</p>
 
-      <h2 id="kontakt">5. Kontakt per E-Mail oder Telefon</h2>
-      <p>Wenn du uns per E-Mail oder Telefon kontaktierst, verarbeiten wir deine Angaben (z. B. Name, E-Mail-Adresse, Telefonnummer und den Inhalt deiner Nachricht), um dein Anliegen zu bearbeiten. Rechtsgrundlagen sind dieselben wie beim Kontaktformular.</p>
-      <p>Unser E-Mail-Postfach wird bei Google (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland) betrieben. E-Mails, die du an uns schickst, und Nachrichten aus dem Kontaktformular werden dort gespeichert. Dabei kann eine Übermittlung an die Google LLC in den USA nicht ausgeschlossen werden. Google ist nach dem EU-US Data Privacy Framework zertifiziert.</p>
-
-      <h2 id="umfrage">6. Umfrage über Tally</h2>
+      <h2 id="umfrage">5. Umfrage über Tally</h2>
       <p>Auf dieser Website verlinken wir auf unsere Umfrage beim Formulardienst Tally. Die Umfrage ist nicht in die Seite eingebettet. Beim bloßen Besuch unserer Website werden deshalb keine Daten an Tally übertragen. Erst wenn du auf den Link klickst, öffnet sich die Umfrage in einem neuen Tab, und es gelten die dort verlinkten <a class="link" href="/datenschutz-umfrage/">Datenschutzhinweise zur Umfrage</a>.</p>
 
-      <h2 id="cookies">7. Keine Cookies, kein Tracking</h2>
+      <h2 id="cookies">6. Keine Cookies, kein Tracking</h2>
       <p>Wir setzen keine Cookies, keine Analyse- oder Werbedienste und keine Social-Media-Plugins ein. Es werden keine Nutzungsprofile erstellt.</p>
 
-      <h2 id="rechte">8. Deine Rechte</h2>
+      <h2 id="rechte">7. Deine Rechte</h2>
       <p>Du hast das Recht auf:</p>
       <ul>
         <li>Auskunft über deine bei uns gespeicherten Daten (Art. 15 DSGVO)</li>
@@ -172,10 +116,10 @@
       <p>Wende dich dazu einfach an <a class="link" href="mailto:tasko.germany@gmail.com">tasko.germany@gmail.com</a>.</p>
       <p>Du hast außerdem das Recht, dich bei einer Datenschutz-Aufsichtsbehörde zu beschweren (Art. 77 DSGVO). Zuständig für uns ist die Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen (LDI NRW).</p>
 
-      <h2 id="entscheidungen">9. Keine automatisierten Entscheidungen</h2>
+      <h2 id="entscheidungen">8. Keine automatisierten Entscheidungen</h2>
       <p>Wir treffen keine automatisierten Entscheidungen im Sinne von Art. 22 DSGVO.</p>
 
-      <h2 id="aenderungen">10. Änderungen</h2>
+      <h2 id="aenderungen">9. Änderungen</h2>
       <p>Wir passen diese Datenschutzerklärung an, wenn sich die Website oder die eingesetzten Dienste ändern. Es gilt die jeweils hier veröffentlichte Fassung.</p>
       <p>Stand: Oktober 2026</p>
     </article>
@@ -190,8 +134,6 @@
             <!-- TODO: höher aufgelöste Datei bzw. SVG des gestapelten Logos nachliefern (aktuell 264×278 px) -->
             <img class="footer__logo-img" src="/assets/img/logo/tasko-logo-dark.png" alt="" width="264" height="278" loading="lazy" decoding="async">
           </a>
-          <!-- TODO: Copy final -->
-          <p class="footer__claim">Kleine Aufträge. <em class="hl">Echte Erfahrung.</em></p>
         </div>
 
         <div class="footer__col">
