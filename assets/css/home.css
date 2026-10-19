@@ -587,14 +587,6 @@ main:focus { outline: none; }
       from { opacity: 0; }
       to   { opacity: 1; }
     }
-    @keyframes drift-near {
-      from { translate: 0 28px; }
-      to   { translate: 0 -28px; }
-    }
-    @keyframes drift-far {
-      from { translate: 0 12px; }
-      to   { translate: 0 -12px; }
-    }
 
     /* Überschriften und einzelne Karten */
     .app__head > .eyebrow,
@@ -641,13 +633,5 @@ main:focus { outline: none; }
     .screens > :nth-child(2) { animation-range: cover 7% cover 27%; }
     .screens > :nth-child(3) { animation-range: cover 14% cover 34%; }
     .screens > :nth-child(4) { animation-range: cover 21% cover 41%; }
-
-    /* Pizzeria-Fotos: leichter Parallax, das rechte Foto langsamer */
-    .story__photos picture {
-      animation: drift-near linear both;
-      animation-timeline: view();
-      animation-range: cover 0% cover 100%;
-    }
-    .story__photos picture:nth-child(2) { animation-name: drift-far; }
   }
 }
